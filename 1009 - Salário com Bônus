@@ -1,0 +1,14 @@
+let input = require('fs').readFileSync('/dev/stdin', 'utf8'); 
+let lines = input.split('\n');
+
+let nomeVend = lines.shift(); 
+let salarioFixo = parseFloat(lines.shift());
+let totalVendasEfet = parseFloat(lines.shift());
+
+function calculaSalarioRec(salarioFixo, totalVendasEfet){
+    return salarioFixo + (totalVendasEfet * 0.15);
+}
+
+let salario = calculaSalarioRec(salarioFixo, totalVendasEfet);
+
+console.log("TOTAL = R$ " + salario.toFixed(2));
