@@ -1,0 +1,12 @@
+let input = require('fs').readFileSync('/dev/stdin', 'utf8'); 
+let lines = input.split('\n');
+
+let raio = parseFloat(lines.shift());
+
+function calcularVolEsfera(raio){
+    return (4*3.14159*Math.pow(raio,3))/3;
+}
+
+let volume = calcularVolEsfera(raio);
+
+console.log("VOLUME = " + volume.toFixed(3));
